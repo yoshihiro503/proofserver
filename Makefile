@@ -50,6 +50,7 @@ gallina: $(GFILES)
 html: $(GLOBFILES) $(VFILES)
 	- mkdir -p html
 	$(COQDOC) $(COQDOCFLAGS) $(COQDOCLIBS) -d html $(VFILES)
+	cp style.css html/
 
 gallinahtml: $(GLOBFILES) $(VFILES)
 	- mkdir -p html
