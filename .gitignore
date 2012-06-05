@@ -1,3 +1,4 @@
+#ocaml
 *.annot
 *.cmo
 *.cma
@@ -7,3 +8,8 @@
 *.cmx
 *.cmxs
 *.cmxa
+
+#coq
+*.vo
+*.glob
+*.v.d
