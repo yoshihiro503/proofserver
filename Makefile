@@ -44,7 +44,7 @@ GHTMLFILES:=$(VFILES:.v=.g.html)
 COQDOCFLAGS:=-utf8 --no-index --title 'ProofServer' --short -toc -html \
 	 --with-header header.html --with-footer footer.html
 
-all: $(VOFILES) 
+all: $(VOFILES)
 spec: $(VIFILES)
 
 gallina: $(GFILES)
@@ -113,7 +113,7 @@ archclean:
 	rm -f *.cmx *.o
 
 
-printenv: 
+printenv:
 	@echo CAMLC =	$(CAMLC)
 	@echo CAMLOPTC =	$(CAMLOPTC)
 	@echo CAMLP4LIB =	$(CAMLP4LIB)
