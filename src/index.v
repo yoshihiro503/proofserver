@@ -1,10 +1,7 @@
 (**
-
-  (* Tweetボタン *)
-  #<a href="https://twitter.com/share" class="twitter-share-button" data-count="vertical" data-lang="ja">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>#
-
-  (* はてなブックマーク *)
-  #<a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>#
+  (* Tweetボタン, はてなブックマーク *)
+#<a href="https://twitter.com/share" class="twitter-share-button" data-via="yoshihiro503">Tweet</a>
+ <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>#
 *)
 
 (**
