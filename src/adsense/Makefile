@@ -31,8 +31,7 @@ PP:=-pp "$(CAMLP4BIN)$(CAMLP4)o -I $(CAMLLIB) -I . $(COQSRCLIBS) $(CAMLP4EXTEND)
 #                                 #
 ###################################
 
-VFILES:= \
-	src/index.v
+VFILES:= ad.v ad1.v ad2.v ad3.v ad4.v ad5.v ad6.v ad7.v
 VOFILES:=$(VFILES:.v=.vo)
 VOFILES0:=$(filter-out ,$(VOFILES))
 GLOBFILES:=$(VFILES:.v=.glob)
@@ -41,27 +40,24 @@ GFILES:=$(VFILES:.v=.g)
 HTMLFILES:=$(VFILES:.v=.html)
 GHTMLFILES:=$(VFILES:.v=.g.html)
 COQDOCFLAGS:=-utf8 --no-index --title 'ProofServer' --short -toc -html \
-	 --with-header header.html --with-footer footer.html
+	 --with-header ../../header.html --with-footer ../../footer.html
 AD:=adsense
-ADDIR:=src/$(AD)
+ADHTMLDIR:=../../html/$(AD)
 
-all: $(VOFILES) $(AD)
+all: $(VOFILES)
 spec: $(VIFILES)
 
 gallina: $(GFILES)
 
 html: $(GLOBFILES) $(VFILES)
-	- mkdir -p html
-	$(COQDOC) $(COQDOCFLAGS) $(COQDOCLIBS) -d html $(VFILES)
-	cp style.css html/
-	cd $(ADDIR); $(MAKE) html
+	- mkdir -p $(ADHTMLDIR)
+	$(COQDOC) $(COQDOCFLAGS) $(COQDOCLIBS) -d $(ADHTMLDIR) $(VFILES)
+	cp ../../style.css $(ADHTMLDIR)
 
 gallinahtml: $(GLOBFILES) $(VFILES)
 	- mkdir -p html
-	$(COQDOC) -toc -html -g $(COQDOCLIBS) -d html $(VFILES)
+	$(COQDOC) -toc -html -g $(COQDOCLIBS) -d $(ADHTMLDIR) $(VFILES)
 
-$(AD):
-	cd $(ADDIR); $(MAKE)
 
 ####################
 #                  #
@@ -111,8 +107,7 @@ install:
 clean:
 	rm -f $(CMOFILES) $(CMIFILES) $(CMXFILES) $(CMXSFILES) $(OFILES) $(VOFILES) $(VIFILES) $(GFILES) $(MLFILES:.ml=.cmo) $(MLFILES:.ml=.cmx) *~
 	rm -f all.ps all-gal.ps all.pdf all-gal.pdf all.glob $(VFILES:.v=.glob) $(HTMLFILES) $(GHTMLFILES) $(VFILES:.v=.tex) $(VFILES:.v=.g.tex) $(VFILES:.v=.v.d)
-	- rm -rf html
-	cd $(ADDIR); $(MAKE) clean
+	- rm -rf $(ADHTMLDIR)
 
 archclean:
 	rm -f *.cmx *.o
