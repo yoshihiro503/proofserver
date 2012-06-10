@@ -32,8 +32,7 @@
    - #<a href="cochin/">Cochin</a>#
    - #<a href="calcoq/">CalCoq</a>#
    - #<a href="k27c8/math/">数理大好き</a>#
-   - #<a href="adsense.html">広告</a>#
-   - #<a href="ad.html">広告</a>#
+   - #<a href="adsense/list.html">広告</a>#
 
    ** Links
 
