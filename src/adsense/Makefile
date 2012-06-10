@@ -31,7 +31,7 @@ PP:=-pp "$(CAMLP4BIN)$(CAMLP4)o -I $(CAMLLIB) -I . $(COQSRCLIBS) $(CAMLP4EXTEND)
 #                                 #
 ###################################
 
-VFILES:= ad.v ad1.v ad2.v ad3.v ad4.v ad5.v ad6.v ad7.v
+VFILES:= list.v ad1.v ad2.v ad3.v ad4.v ad5.v ad6.v ad7.v
 VOFILES:=$(VFILES:.v=.vo)
 VOFILES0:=$(filter-out ,$(VOFILES))
 GLOBFILES:=$(VFILES:.v=.glob)
