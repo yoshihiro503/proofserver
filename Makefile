@@ -32,7 +32,7 @@ PP:=-pp "$(CAMLP4BIN)$(CAMLP4)o -I $(CAMLLIB) -I . $(COQSRCLIBS) $(CAMLP4EXTEND)
 ###################################
 
 VFILES:= \
-	src/index.v
+	src/foo.v
 VOFILES:=$(VFILES:.v=.vo)
 VOFILES0:=$(filter-out ,$(VOFILES))
 GLOBFILES:=$(VFILES:.v=.glob)
@@ -54,6 +54,7 @@ html: $(GLOBFILES) $(VFILES)
 	- mkdir -p html
 	$(COQDOC) $(COQDOCFLAGS) $(COQDOCLIBS) -d html $(VFILES)
 	cp style.css html/
+	cp index.html html/
 	cd $(ADDIR); $(MAKE) html
 
 gallinahtml: $(GLOBFILES) $(VFILES)
